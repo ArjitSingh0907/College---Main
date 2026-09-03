@@ -16,7 +16,7 @@
 
     <header class="nav-wrapper" id="nav-wrapper">
         <div class="nav-island nav-island-left">
-            <a href="#" class="brand-container">
+            <a href="index.html" class="brand-container">
                 <img src="static/techniki-logo.png" alt="Techniki Logo" class="brand-logo-img">
             </a>
         </div>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="nav-island nav-island-right">
-            <a href="#register" class="cta-btn-nav">Register Now</a>
+            <a href="post-ps.html" class="cta-btn-nav">Post your PS</a>
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="hero-actions">
-                    <a href="#register" class="cta-btn-primary">Join Hackathon</a>
+                    <a href="post-ps.html" class="cta-btn-primary">Post your PS</a>
                     <a href="#qr-section" class="cta-btn-secondary">Scan QR Code</a>
                 </div>
             </div>
@@ -157,21 +157,24 @@
         <section id="qr-section" class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-badge">MOBILE ACCESS</span>
-                    <h2>Direct Registration</h2>
-                    <p>Scan to immediately open the registration dashboard on your mobile device</p>
+                    <span class="section-badge">STUDENT REGISTRATION</span>
+                    <h2>Direct Team Registration</h2>
+                    <p>Scan to immediately open the official student registration portal on your mobile device</p>
                 </div>
                 <div class="qr-apple-card apple-reveal">
                     <div class="qr-scanner-box">
                         <div class="laser-beam"></div>
-                        <img src="static/qr-code.png" alt="ORIGIN '26 Official Registration QR Code" class="custom-qr-img">
+                        <img src="static/qr-code.png" 
+                             onerror="this.onerror=null; this.src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://origin26.amity.edu/register&color=ffffff&bgcolor=050814';" 
+                             alt="Student Registration QR Portal" 
+                             class="custom-qr-img">
                     </div>
                     <div class="qr-details-pane">
-                        <span class="card-badge">DIRECT REGISTRATION PORTAL</span>
+                        <span class="card-badge">FOR PARTICIPATING STUDENTS</span>
                         <h3>Instant Team Enrollment</h3>
-                        <p class="card-body-text">Scan with any camera or Google Lens to launch the official registration portal, review team guidelines, and submit your team's preliminary profile.</p>
+                        <p class="card-body-text">Are you a student developer, designer, or hardware hacker? Scan with your phone camera or Google Lens to review team eligibility criteria, assemble your roster, and lock in your preliminary team profile.</p>
                         <div class="qr-cta-wrap">
-                            <a href="#register" class="cta-btn-primary">Open Application Form ↗</a>
+                            <a href="#hero" class="cta-btn-primary">Register Team via Portal ↗</a>
                         </div>
                     </div>
                 </div>

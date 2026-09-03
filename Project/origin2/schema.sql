@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS origin_2026_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE origin_2026_db;
+
+CREATE TABLE IF NOT EXISTS problem_statements (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL,
+    designation VARCHAR(255) NOT NULL,
+    corp_email VARCHAR(255) NOT NULL,
+    ps_1 TEXT NOT NULL,
+    ps_2 TEXT DEFAULT NULL,
+    ps_3 TEXT DEFAULT NULL,
+    ps_4 TEXT DEFAULT NULL,
+    ps_5 TEXT DEFAULT NULL,
+    concerns TEXT DEFAULT NULL,
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_corp_email (corp_email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

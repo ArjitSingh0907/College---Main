@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Partner with ORIGIN '26 | Post Problem Statements</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .portal-layout {
+            padding: clamp(100px, 14vw, 140px) 0 80px 0;
+        }
+
+        .explainer-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border-radius: var(--radius-squircle);
+            padding: clamp(24px, 4vw, 36px);
+            margin-bottom: clamp(28px, 4vw, 44px);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .explainer-card h3 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .pillars-3col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .sub-pillar {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            padding: 20px;
+        }
+
+        .sub-pillar h4 {
+            font-size: 1.05rem;
+            color: var(--accent-amber);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sub-pillar p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .portal-form-container {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .ps-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 28px;
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: left;
+        }
+
+        .input-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+        }
+
+        .ps-input, .ps-textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 14px 18px;
+            color: #ffffff;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: all 0.3s var(--ease-fluid);
+            outline: none;
+        }
+
+        .ps-input:focus, .ps-textarea:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--glass-border-hover);
+            box-shadow: 0 0 20px rgba(251, 146, 60, 0.25);
+        }
+
+        .ps-textarea {
+            min-height: 86px;
+            resize: vertical;
+        }
+
+        .email-warning {
+            font-size: 0.78rem;
+            color: #f87171;
+            display: none;
+            margin-top: 4px;
+        }
+
+        .form-status-msg {
+            padding: 12px 18px;
+            border-radius: var(--radius-pill);
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: none;
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .form-status-msg.success {
+            display: block;
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            color: #4ade80;
+        }
+
+        .form-status-msg.error {
+            display: block;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: #f87171;
+        }
+
+        @media (max-width: 900px) {
+            .pillars-3col {
+                grid-template-columns: 1fr;
+            }
+            .form-row-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="warp-canvas"></canvas>
+    <canvas id="comet-canvas"></canvas>
+
+    <header class="nav-wrapper" id="nav-wrapper">
+        <div class="nav-island nav-island-left">
+            <a href="index.html" class="brand-container">
+                <img src="static/techniki-logo.png" alt="Techniki Logo" class="brand-logo-img">
+            </a>
+        </div>
+
+        <div class="nav-island nav-island-center" id="nav-island-center">
+            <nav class="nav-links" id="top-nav-links">
+                <a href="index.html" class="nav-item">← Back to Overview</a>
+                <a href="#about-hackathons" class="nav-item">How It Works</a>
+                <a href="#ps-portal" class="nav-item">Submission Portal</a>
+            </nav>
+        </div>
+
+        <div class="nav-island nav-island-right">
+            <a href="#ps-portal" class="cta-btn-nav">Post your PS</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="portal-layout">
+        <div class="container">
+
+            <div class="section-header" id="about-hackathons">
+                <span class="section-badge">FOR INDUSTRY PARTNERS &amp; BRANDS</span>
+                <h2>Corporate Problem Statement Portal</h2>
+                <p>Learn how your company can partner with ORIGIN '26 to have custom technical challenges solved by elite engineering cohorts.</p>
+            </div>
+
+            <div class="explainer-card apple-reveal">
+                <span class="card-badge">FOUNDATIONAL CONTEXT</span>
+                <h3>What Is a Hackathon?</h3>
+                <p class="card-body-text">
+                    A hackathon is an intensive, sprint-like technology competition where cross-functional teams of software developers, hardware engineers, data scientists, and UI/UX designers collaborate continuously under time constraints. Instead of theoretical pitch decks or slide presentations, participants are evaluated entirely on demonstrable, working software and physical prototypes built from scratch.
+                </p>
+                <div class="pillars-3col">
+                    <div class="sub-pillar">
+                        <h4>⏱️ The 36-Hour Sprint</h4>
+                        <p>Teams code, assemble circuits, and debug non-stop in an on-campus arena, transforming conceptual architectures into working products.</p>
+                    </div>
+                    <div class="sub-pillar">
+                        <h4>🧩 Authentic Challenges</h4>
+                        <p>Students do not work on textbook exercises. They build custom solutions to unreleased business and technical problems provided by external organizations.</p>
+                    </div>
+                    <div class="sub-pillar">
+                        <h4>⚖️ Rigorous Evaluation</h4>
+                        <p>Prototypes are judged by senior industry practitioners on codebase stability, architectural viability, scalability, and UX design.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explainer-card apple-reveal">
+                <span class="card-badge">THE FLAGSHIP INITIATIVE</span>
+                <h3>What Is ORIGIN '26 &amp; How Is It Conducted?</h3>
+                <p class="card-body-text">
+                    ORIGIN '26 is the flagship national hackathon organized by Techniki at Amity School of Engineering &amp; Technology (ASET), Amity University Haryana. It brings together hundreds of top-tier undergraduate engineering students across North India for an uninterrupted 36-hour physical build marathon on campus.
+                </p>
+                <div class="pillars-3col">
+                    <div class="sub-pillar">
+                        <h4>1. Companies Define the Tasks</h4>
+                        <p>Your brand or organization submits between 1 and 5 bottleneck challenges or technical wish-list features through the form below.</p>
+                    </div>
+                    <div class="sub-pillar">
+                        <h4>2. Architecture Review</h4>
+                        <p>Prior to entering the physical arena, applicant teams submit a two-page system blueprint. Only cohorts with solid engineering proposals are admitted.</p>
+                    </div>
+                    <div class="sub-pillar">
+                        <h4>3. Direct IP &amp; Hiring Access</h4>
+                        <p>Partnering brands obtain functional prototypes, review open-source or proprietary solutions, and evaluate top talent for high-impact internship or engineering roles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portal-form-container" id="ps-portal">
+                <div class="apple-card apple-reveal">
+                    <div style="text-align: center; margin-bottom: 24px;">
+                        <span class="card-badge">OFFICIAL SUBMISSION INTAKE</span>
+                        <h2>Submit Your Problem Statements</h2>
+                        <p class="card-body-text">Please provide your corporate details and up to 5 problem statements. To ensure high-quality industry curation, registrations using public consumer email providers are strictly restricted.</p>
+                    </div>
+
+                    <form id="corporate-ps-form" class="ps-form">
+                        
+                        <div class="form-row-2">
+                            <div class="input-group">
+                                <label class="input-label" for="full-name">Full Name *</label>
+                                <input class="ps-input" type="text" id="full-name" name="full_name" required placeholder="e.g. Vikram Sharma">
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label" for="designation">Designation &amp; Organization *</label>
+                                <input class="ps-input" type="text" id="designation" name="designation" required placeholder="e.g. Lead Architect, Siemens">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label" for="corp-email">Official Corporate Email *</label>
+                            <input class="ps-input" type="email" id="corp-email" name="corp_email" required placeholder="name@company.com">
+                            <span id="email-error-msg" class="email-warning">Generic personal email accounts (@gmail, @yahoo, @outlook, @hotmail, etc.) are not accepted. Please enter your official corporate domain email.</span>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label" for="ps-1">Problem Statement 1 * (Primary Challenge)</label>
+                            <textarea class="ps-textarea" id="ps-1" name="ps_1" required placeholder="State background, core engineering challenge, and expected outcomes..."></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label" for="ps-2">Problem Statement 2 (Optional)</label>
+                            <textarea class="ps-textarea" id="ps-2" name="ps_2" placeholder="Secondary objective or alternative track challenge..."></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label" for="ps-3">Problem Statement 3 (Optional)</label>
+                            <textarea class="ps-textarea" id="ps-3" name="ps_3" placeholder="Additional problem statement..."></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label" for="ps-4">Problem Statement 4 (Optional)</label>
+                            <textarea class="ps-textarea" id="ps-4" name="ps_4" placeholder="Additional problem statement..."></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label" for="ps-5">Problem Statement 5 (Optional)</label>
+                            <textarea class="ps-textarea" id="ps-5" name="ps_5" placeholder="Additional problem statement..."></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label" for="concerns">Technical Constraints or Inquiries</label>
+                            <textarea class="ps-textarea" id="concerns" name="concerns" placeholder="Specify NDA constraints, hardware requirements, mentorship availability, or general queries..."></textarea>
+                        </div>
+
+                        <div id="form-feedback" class="form-status-msg"></div>
+
+                        <div style="text-align: center; margin-top: 10px;">
+                            <button type="submit" id="submit-btn" class="cta-btn-primary" style="width: 100%; max-width: 320px; cursor: pointer;">Submit Problem Statements</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-obsidian-card apple-reveal">
+                <div class="footer-brand-wrap">
+                    <div class="footer-brand-header">
+                        <img src="static/techniki-logo.png" alt="Techniki Logo" class="footer-logo-img">
+                        <div>
+                            <h3 class="footer-title">ORIGIN '26</h3>
+                            <span class="footer-tagline">&lt;/ THE BEGINNING OF THE NEXT BIG THING &gt;</span>
+                        </div>
+                    </div>
+                    <div class="footer-live-status">
+                        <span class="status-pulse-dot"></span>
+                        <span class="status-text">Hackathon Registrations Live</span>
+                    </div>
+                </div>
+                <div class="footer-bottom-bar">
+                    <p class="copyright-text">&copy; 2026 ORIGIN '26. Built by Techniki &amp; ASET Ecosystem. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const form = document.getElementById("corporate-ps-form");
+        const emailInput = document.getElementById("corp-email");
+        const emailError = document.getElementById("email-error-msg");
+        const feedback = document.getElementById("form-feedback");
+        const submitBtn = document.getElementById("submit-btn");
+
+        const RESTRICTED_DOMAINS = [
+            "gmail.com", "yahoo.com", "yahoo.co.in", "outlook.com", "hotmail.com", 
+            "icloud.com", "mail.com", "protonmail.com", "proton.me", "aol.com", 
+            "zoho.com", "yandex.com", "gmx.com", "live.com"
+        ];
+
+        function isCorporateEmail(email) {
+            const domain = email.trim().split("@")[1]?.toLowerCase();
+            if (!domain) return false;
+            return !RESTRICTED_DOMAINS.includes(domain);
+        }
+
+        emailInput.addEventListener("input", () => {
+            if (emailInput.value && !isCorporateEmail(emailInput.value)) {
+                emailError.style.display = "block";
+                emailInput.style.borderColor = "rgba(248, 113, 113, 0.6)";
+            } else {
+                emailError.style.display = "none";
+                emailInput.style.borderColor = "var(--glass-border)";
+            }
+        });
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            feedback.className = "form-status-msg";
+            feedback.style.display = "none";
+
+            const emailVal = emailInput.value.trim();
+            if (!isCorporateEmail(emailVal)) {
+                emailError.style.display = "block";
+                emailInput.focus();
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Transmitting Dossier...";
+
+            const payload = {
+                full_name: document.getElementById("full-name").value.trim(),
+                designation: document.getElementById("designation").value.trim(),
+                corp_email: emailVal,
+                ps_1: document.getElementById("ps-1").value.trim(),
+                ps_2: document.getElementById("ps-2").value.trim() || null,
+                ps_3: document.getElementById("ps-3").value.trim() || null,
+                ps_4: document.getElementById("ps-4").value.trim() || null,
+                ps_5: document.getElementById("ps-5").value.trim() || null,
+                concerns: document.getElementById("concerns").value.trim() || null
+            };
+
+            try {
+                const response = await fetch("http://localhost:3000/api/submit-ps", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    feedback.className = "form-status-msg success";
+                    feedback.innerText = "Problem statements successfully received and queued for review.";
+                    form.reset();
+                } else {
+                    const errData = await response.json().catch(() => ({}));
+                    feedback.className = "form-status-msg error";
+                    feedback.innerText = errData.message || "Submission failed. Please verify API connection.";
+                }
+            } catch (err) {
+                feedback.className = "form-status-msg error";
+                feedback.innerText = "Unable to reach server. Please ensure backend service is active.";
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Submit Problem Statements";
+            }
+        });
+    </script>
+</body>
+</html>

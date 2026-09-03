@@ -29,5 +29,7 @@ int main(void){
     } else {
         printf("Element not found. \n");
     }
+    printf("Arjit Singh\n");
+    printf("A50105225074\n");
     return 0;
 }

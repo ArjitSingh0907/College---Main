@@ -24,7 +24,12 @@ int main(void){
     scanf("%d", &n);
 
     int arr[n];
-    printf("Enter elements in sorted order : \n");
+    printf("Enter %d elements in sorted order:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter elements to search for : \n");
     scanf("%d", &key);
 
     int result = binarysearch(arr, n, key);
@@ -34,5 +39,7 @@ int main(void){
     } else {
         printf("Element not found.\n");
     }
+    printf("Arjit Singh\n");
+    printf("A50105225074\n");
     return 0;
 }

@@ -2,7 +2,7 @@ const SITE_DATA = {
     hero: {
         title: "ORIGIN '26",
         tagline: "</ THE BEGINNING OF THE NEXT BIG THING >",
-        date: "Dates Announcing Soon",
+        date: "7th October - 9th October 2026",
         venue: "Amity University Haryana"
     },
     about: {
@@ -57,9 +57,9 @@ const SITE_DATA = {
             icon: "🧠",
             badge: "Intelligent Systems",
             problems: [
-                "Real-time edge video analytics for industrial hazard detection.",
-                "Autonomous multimodal diagnostic assistant for triage analysis.",
-                "Predictive anomaly detection across distributed cloud infrastructure."
+                "Problem Statement 1: To be revealed soon.",
+                "Problem Statement 2: To be revealed soon.",
+                "Problem Statement 3: To be revealed soon."
             ]
         },
         {
@@ -67,9 +67,9 @@ const SITE_DATA = {
             icon: "📡",
             badge: "Connected Hardware",
             problems: [
-                "Sub-GHz mesh sensor telemetry network for field environments.",
-                "Ultra-low-power asset tracking and tamper-detection units.",
-                "Smart energy metering with automated load prediction models."
+                "Problem Statement 1: To be revealed soon.",
+                "Problem Statement 2: To be revealed soon.",
+                "Problem Statement 3: To be revealed soon."
             ]
         },
         {
@@ -77,9 +77,9 @@ const SITE_DATA = {
             icon: "🤖",
             badge: "Autonomous Units",
             problems: [
-                "Vision-guided SLAM navigation for indoor transport rovers.",
-                "Kinematic sorting routines for automated robotic arms.",
-                "Multi-agent swarm coordination for field operations."
+                "Problem Statement 1: To be revealed soon.",
+                "Problem Statement 2: To be revealed soon.",
+                "Problem Statement 3: To be revealed soon."
             ]
         },
         {
@@ -87,9 +87,9 @@ const SITE_DATA = {
             icon: "🛡️",
             badge: "Security & Trust",
             problems: [
-                "Zero-trust network micro-segmentation based on telemetry.",
-                "Automated honeypot infrastructure with machine-learning analysis.",
-                "Quantum-resistant cryptographic data envelopes for storage."
+                "Problem Statement 1: To be revealed soon.",
+                "Problem Statement 2: To be revealed soon.",
+                "Problem Statement 3: To be revealed soon."
             ]
         },
         {
@@ -97,9 +97,9 @@ const SITE_DATA = {
             icon: "☁️",
             badge: "Infrastructure",
             problems: [
-                "Automated developer environment provisioning with dynamic cost caps.",
-                "Canary deployment orchestrator with automated rollback triggers.",
-                "Workload autoscaler optimizing multi-cluster GPU compute."
+                "Problem Statement 1: To be revealed soon.",
+                "Problem Statement 2: To be revealed soon.",
+                "Problem Statement 3: To be revealed soon."
             ]
         },
         {
@@ -107,9 +107,9 @@ const SITE_DATA = {
             icon: "🚀",
             badge: "Aero Innovation",
             problems: [
-                "Autonomous return-to-home flight routines in GPS-denied zones.",
-                "Real-time aerodynamic telemetry visualizer with physics models.",
-                "Airframe structural health monitoring using edge DSP analysis."
+                "Problem Statement 1: To be revealed soon.",
+                "Problem Statement 2: To be revealed soon.",
+                "Problem Statement 3: To be revealed soon."
             ]
         }
     ],

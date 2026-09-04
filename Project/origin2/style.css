@@ -549,50 +549,55 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
     flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.cta-btn-primary, 
+.cta-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 190px;
+    height: 52px;
+    padding: 0 28px;
+    border-radius: var(--radius-pill);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-sizing: border-box;
+    line-height: 1;
+    white-space: nowrap;
+    transition: transform 0.3s var(--ease-fluid), box-shadow 0.3s var(--ease-fluid), background 0.3s ease, border-color 0.3s ease;
 }
 
 .cta-btn-primary {
     background: var(--btn-primary-bg);
     color: var(--btn-primary-text);
-    padding: clamp(12px, 2.5vw, 15px) clamp(24px, 4vw, 36px);
-    border-radius: var(--radius-pill);
-    font-weight: 700;
-    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-    text-decoration: none;
-    transition: all 0.3s var(--ease-fluid);
+    border: 1px solid transparent;
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
-    display: inline-block;
-    text-align: center;
 }
 
 .cta-btn-primary:hover {
     background: #f8fafc;
     box-shadow: 0 0 35px rgba(251, 146, 60, 0.45), 0 0 15px rgba(56, 189, 248, 0.3);
-    transform: scale(1.03);
+    transform: translateY(-2px);
 }
 
 .cta-btn-secondary {
     color: var(--text-primary);
-    border: 1px solid var(--glass-border);
     background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     box-shadow: var(--glass-shadow);
-    padding: clamp(12px, 2.5vw, 15px) clamp(24px, 4vw, 36px);
-    border-radius: var(--radius-pill);
-    font-weight: 600;
-    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-    text-decoration: none;
-    transition: all 0.3s var(--ease-fluid);
-    display: inline-block;
-    text-align: center;
 }
 
 .cta-btn-secondary:hover {
     border-color: var(--glass-border-hover);
     background: var(--glass-bg-hover);
+    box-shadow: var(--glass-shadow-hover);
     transform: translateY(-2px);
 }
 

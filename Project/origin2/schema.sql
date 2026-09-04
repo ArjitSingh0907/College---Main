@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS problem_statements (
     full_name VARCHAR(255) NOT NULL,
     designation VARCHAR(255) NOT NULL,
     corp_email VARCHAR(255) NOT NULL,
+    contact_no VARCHAR(50) NOT NULL,
     ps_1 TEXT NOT NULL,
     ps_2 TEXT DEFAULT NULL,
     ps_3 TEXT DEFAULT NULL,

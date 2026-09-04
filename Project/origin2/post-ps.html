@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Partner with ORIGIN '26 | Post Problem Statements</title>
+    <title>Partner with ORIGIN '26 | Submit Problem Statements</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -178,7 +178,7 @@
         </div>
 
         <div class="nav-island nav-island-right">
-            <a href="#ps-portal" class="cta-btn-nav">Post your PS</a>
+            <a href="#ps-portal" class="cta-btn-nav">Submit PS</a>
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
@@ -256,15 +256,21 @@
                                 <input class="ps-input" type="text" id="full-name" name="full_name" required placeholder="e.g. Vikram Sharma">
                             </div>
                             <div class="input-group">
-                                <label class="input-label" for="designation">Designation &amp; Organization *</label>
+                                <label class="input-label" for="designation">Designation &amp; Post *</label>
                                 <input class="ps-input" type="text" id="designation" name="designation" required placeholder="e.g. Lead Architect, Siemens">
                             </div>
                         </div>
 
-                        <div class="input-group">
-                            <label class="input-label" for="corp-email">Official Corporate Email *</label>
-                            <input class="ps-input" type="email" id="corp-email" name="corp_email" required placeholder="name@company.com">
-                            <span id="email-error-msg" class="email-warning">Generic personal email accounts (@gmail, @yahoo, @outlook, @hotmail, etc.) are not accepted. Please enter your official corporate domain email.</span>
+                        <div class="form-row-2">
+                            <div class="input-group">
+                                <label class="input-label" for="corp-email">Official Corporate Email *</label>
+                                <input class="ps-input" type="email" id="corp-email" name="corp_email" required placeholder="name@company.com">
+                                <span id="email-error-msg" class="email-warning">Generic personal email accounts (@gmail, @yahoo, @outlook, @hotmail, etc.) are not accepted. Please enter your official corporate domain email.</span>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label" for="contact-no">Contact Number *</label>
+                                <input class="ps-input" type="tel" id="contact-no" name="contact_no" required placeholder="+91 98765 43210">
+                            </div>
                         </div>
 
                         <div class="input-group">
@@ -382,6 +388,7 @@
                 full_name: document.getElementById("full-name").value.trim(),
                 designation: document.getElementById("designation").value.trim(),
                 corp_email: emailVal,
+                contact_no: document.getElementById("contact-no").value.trim(),
                 ps_1: document.getElementById("ps-1").value.trim(),
                 ps_2: document.getElementById("ps-2").value.trim() || null,
                 ps_3: document.getElementById("ps-3").value.trim() || null,

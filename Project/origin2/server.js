@@ -34,9 +34,9 @@ app.get("/post-ps", (req, res) => {
 
 app.post("/api/submit-ps", async (req, res) => {
     try {
-        const { full_name, designation, corp_email, ps_1, ps_2, ps_3, ps_4, ps_5, concerns } = req.body;
+        const { full_name, designation, corp_email, contact_no, ps_1, ps_2, ps_3, ps_4, ps_5, concerns } = req.body;
 
-        if (!full_name || !designation || !corp_email || !ps_1) {
+        if (!full_name || !designation || !corp_email || !contact_no || !ps_1) {
             return res.status(400).json({ message: "Required fields missing." });
         }
 
@@ -47,14 +47,15 @@ app.post("/api/submit-ps", async (req, res) => {
 
         const insertQuery = `
             INSERT INTO problem_statements 
-            (full_name, designation, corp_email, ps_1, ps_2, ps_3, ps_4, ps_5, concerns)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (full_name, designation, corp_email, contact_no, ps_1, ps_2, ps_3, ps_4, ps_5, concerns)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
 
         const [result] = await dbPool.execute(insertQuery, [
             full_name,
             designation,
             corp_email,
+            contact_no,
             ps_1,
             ps_2 || null,
             ps_3 || null,

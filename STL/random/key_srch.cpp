@@ -12,4 +12,5 @@ int main() {
         cout << "Found -> " << it->first << " : " << it->second << endl;
     else
         cout << "Not found." << endl;
+    return 0;
 }

@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    map<int,string> m = {{99,"Saman"}, {100,"Rhea"}, {101,"Arjit"}};
+    map<int,string> m = {{99,"Saman"}, {100,"Rhea"}, {101,"Arjit"}, {102, "Tanya"}};
 
     int key = 101;
     auto it = m.find(key);

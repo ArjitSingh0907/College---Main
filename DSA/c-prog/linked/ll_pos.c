@@ -1,3 +1,5 @@
+//different types of operations on a linked list node.
+
 #include <stdio.h>
 #include <stdlib.h>
 

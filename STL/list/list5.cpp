@@ -1,9 +1,11 @@
+//mixed questions...
 #include <iostream>
 #include <list>
 using namespace std;
 
 int main(void){
     list <int> ls = {1, 2, 3, 4, 5};
+
     ls.emplace_back(3);
     ls.emplace_front(2);
     ls.push_back(10);

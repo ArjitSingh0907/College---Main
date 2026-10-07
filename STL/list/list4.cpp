@@ -5,6 +5,7 @@ using namespace std;
 
 int main(void){
     list <int> ls;
+    
     ls.push_back(1);
     ls.emplace_back(2);
     ls.push_front(3);

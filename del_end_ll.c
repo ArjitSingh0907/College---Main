@@ -17,16 +17,27 @@ struct Node* createNode(int data) {
     return newNode;
 }
 
-void deleteFromBeginning(struct Node** head_ref) {
+void deleteFromEnd(struct Node** head_ref) {
     if (*head_ref == NULL) {
         printf("List is already empty. Underflow!\n");
         return;
     }
 
+    if ((*head_ref)->next == NULL) {
+        printf("Deleted element: %d\n", (*head_ref)->data);
+        free(*head_ref);
+        *head_ref = NULL;
+        return;
+    }
+
     struct Node* temp = *head_ref;
-    *head_ref = (*head_ref)->next;
-    printf("Deleted element: %d\n", temp->data);
-    free(temp);
+    while (temp->next->next != NULL) {
+        temp = temp->next;
+    }
+
+    printf("Deleted element: %d\n", temp->next->data);
+    free(temp->next);
+    temp->next = NULL;
 }
 
 void printList(struct Node* node) {
@@ -50,23 +61,21 @@ int main(void) {
     struct Node* head = createNode(10);
     head->next = createNode(20);
     head->next->next = createNode(30);
-    head->next->next->next = createNode(40);
-    head->next->next->next->next = createNode(50);
 
     printf("Original List:\n");
     printList(head);
 
-    printf("\nPerforming deletion:\n");
-    deleteFromBeginning(&head);
+    printf("\nPerforming deletion from end:\n");
+    deleteFromEnd(&head);
     printList(head);
 
-    deleteFromBeginning(&head);
+    deleteFromEnd(&head);
     printList(head);
 
-    deleteFromBeginning(&head);
+    deleteFromEnd(&head);
     printList(head);
 
-    deleteFromBeginning(&head);
+    deleteFromEnd(&head);
 
     freeList(head);
     return 0;

@@ -38,6 +38,9 @@ int main(void) {
     append(&head, 20);
     append(&head, 30);
     append(&head, 40);
+    append(&head, 50);
+    append(&head, 60);
+    append(&head, 70);
 
     printf("Elements in reverse order: ");
     displayReverse(head);

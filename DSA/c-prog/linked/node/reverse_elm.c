@@ -27,6 +27,7 @@ void displayReverse(struct Node* head) {
     if (head == NULL) {
         return;
     }
+    
     displayReverse(head->next);
     printf("%d ", head->data);
 }

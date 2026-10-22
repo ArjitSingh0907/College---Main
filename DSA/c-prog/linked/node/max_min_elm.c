@@ -55,6 +55,8 @@ int main(void) {
     append(&head, 42);
     append(&head, 7);
     append(&head, 1);
+    append(&head, 99);
+    append(&head, -11);
 
     findMinMax(head);
 

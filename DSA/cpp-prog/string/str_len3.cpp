@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main(void) {
     char str[100];
     int length = 0;
 
@@ -11,8 +11,6 @@ int main() {
     while (str[length] != '\0') {
         length++;
     }
-
     cout << "Length = " << length << endl;
-
     return 0;
 }

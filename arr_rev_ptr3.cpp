@@ -3,11 +3,11 @@ using namespace std;
 
 int main(void){
     int arr[] = {1, 2, 3, 4, 10, 20, 30, 40};
-    int *left = arr + 4;
     int size = sizeof(arr) / sizeof(arr[0]);
+    int *left = arr + (size / 2);
     int *right = &arr[size - 1];
 
-    while (left <= right){
+    while (left < right){
         int temp = *left;
         *left = *right;
         *right = temp;

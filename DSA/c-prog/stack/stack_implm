@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int stack[5];
+int top = -1;
+
+void push(int val) {
+    if (top == 4) {
+        printf("Stack Overflow\n");
+    } else {
+        top++;
+        stack[top] = val;
+        printf("%d pushed\n", val);
+    }
+}
+
+void pop() {
+    if (top == -1) {
+        printf("Stack Underflow\n");
+    } else {
+        printf("%d popped\n", stack[top]);
+        top--;
+    }
+}
+
+void displayTop() {
+    if (top == -1) {
+        printf("Stack is empty\n");
+    } else {
+        printf("Top element: %d\n", stack[top]);
+    }
+}
+
+void count() {
+    printf("Total elements: %d\n", top + 1);
+}
+
+int main(void) {
+    push(10);
+    push(20);
+    push(30);
+
+    displayTop();
+    count();
+
+    pop();
+
+    displayTop();
+    count();
+
+    return 0;
+}

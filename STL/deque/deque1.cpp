@@ -3,7 +3,8 @@
 using namespace std;
 
 int main(void){
-    deque <int> d = {1, 2, 3};
+    deque <int> d = {1, 2, 3, 4, 5};
+    
     d.emplace_front(10);
     d.emplace_back(11);
     d.push_front(20);
@@ -13,4 +14,5 @@ int main(void){
         cout << it << " ";
     }
     cout << endl;
+    return 0;
 }

@@ -20,4 +20,18 @@ while (curr != nullptr){
     curr = curr -> next;
 } cout << "NULL" << endl;
 
+struct node with a constructor for automatic node formations
+struct Node{
+    int data;
+    Node *next;
+    
+    Node (int val){
+        data = val;
+        next = nullptr;    
+    }
+};
+int main(void){
+    Node *newNode = new Node(10); //data = 10; next = nullptr...
+}
+
 */

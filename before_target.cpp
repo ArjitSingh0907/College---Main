@@ -12,10 +12,23 @@ struct Node {
 
 void before_target(Node *&head, int target, int val){
     Node *curr = head;
-    while (curr != nullptr && curr -> data == target){
+    if (head == nullptr){
+        cout << "List is empty." << endl;
+        return;
+    }
+
+    if (head -> data == target){
+        Node *new_node = new Node(val);
+        new_node -> next = head;
+        head = new_node;
+        return;
+    }
+
+    while (curr -> next != nullptr && curr -> next -> data != target){
         curr = curr -> next;
     }
-    if (curr == nullptr){
+
+    if (curr -> next == nullptr){
         cout << "Target not found." << endl;
         return;
     }
@@ -57,7 +70,7 @@ int main(void){
     cout << "enter number to insert : ";
     cin >> num;
     Node *head = first;
-    before_target(first, target, num);
+    before_target(head, target, num);
     print(head);
     delete_all(head);
     return 0;

@@ -48,7 +48,7 @@ int main(void){
     cout << "enter position to insert to : ";
     cin >> pos;
     Node *first = new Node(10);
-    Node *second = new Node(30);
+    Node *second = new Node(20);
     Node *third = new Node(40);
 
     first -> next = second;

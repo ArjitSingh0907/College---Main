@@ -69,6 +69,7 @@ int main(void){
     cin >> target;
     cout << "enter number to insert : ";
     cin >> num;
+    
     Node *head = first;
     before_target(head, target, num);
     print(head);

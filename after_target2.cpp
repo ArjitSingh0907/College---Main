@@ -15,10 +15,12 @@ void after_target(Node *&head, int target, int val){
     while (curr != nullptr && curr -> data != target){
         curr = curr -> next;
     }
+
     if (curr == nullptr){
         cout << "Target not found." << endl;
         return;
     }
+
     Node *new_node = new Node(val);
     new_node -> next = curr -> next;
     curr -> next = new_node;
@@ -56,6 +58,7 @@ int main(void){
     cin >> target;
     cout << "enter number to insert : ";
     cin >> num;
+    
     Node *head = first;
     after_target(first, target, num);
     print(head);

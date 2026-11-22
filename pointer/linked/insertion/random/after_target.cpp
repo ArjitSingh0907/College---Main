@@ -63,7 +63,7 @@ int main(void){
     if (target == 1){
         insert_pos(first, 1, num);
     }
-
+    cout << "End." << endl;
     insert_pos(first, target, num);
     print(first);
     delete_all(first);

@@ -42,7 +42,9 @@ void delete_all(Node *head){
 };
 
 int main(void){
-    int n;
+    int n;    
+    cout << "-----------------------";
+
     cout << "number of integers : ";
     cin >> n;
 
